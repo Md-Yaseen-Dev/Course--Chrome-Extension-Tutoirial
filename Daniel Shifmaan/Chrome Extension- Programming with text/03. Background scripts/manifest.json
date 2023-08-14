@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": " Coding Train Extension",
+  "name": " Coding Train Extension 2",
   "version": "0.1",
   "content_scripts": [
     {
@@ -9,6 +9,10 @@
     }
   ],
   "background": {
-    "js": ["background.js"]
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_icon": "ct1.png"
   }
 }

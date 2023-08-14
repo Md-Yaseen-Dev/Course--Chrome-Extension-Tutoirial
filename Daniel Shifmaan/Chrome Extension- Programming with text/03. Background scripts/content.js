@@ -1,18 +1,16 @@
 console.log("chrome extension go?");
 
+chrome.runtime.onMessage.addListener(gotMessage);
 
-let paragraphs = document.getElementsByTagName("p");
-
-for(elt of paragraphs){
-    elt.style['background-color'] = "#ff0011";
+function gotMessage(message) {
+  if (message.txt == "hello") {
+    let paragraphs = document.getElementsByTagName("p");
+    for (elt of paragraphs) {
+      elt.style["background-color"] = "grey";
+    }
+  }
 }
 
+// not working message, sender, sendResponse in function due to manifest v3.
 
-/*
-- You can use these urls in matches
-1. '*://*shiffman*'
-2. '*://*github*'
-3. 'http://shiffaman.net/*
-4. 'https://shiffaman.net/*'
-Note; it will match for only that links.
-*/
+//  only message is working
